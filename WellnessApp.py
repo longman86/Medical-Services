@@ -1,32 +1,33 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import os
-import webbrowser
 from PIL import Image
 
 st.set_page_config(layout='wide')
-image = Image.open('C:\\Users\\ademola.atolagbe\\Downloads\\Avon.jfif')
+image = Image.open("AvonLogo.png")
 st.image(image, use_column_width=False)
 st.title('AVON HMO Wellness Survey')
 
 
-
 path = r'C:\Users\ademola.atolagbe\OneDrive - Avon Healthcare Ltd\Member Wellness.csv'
 wellness_df = pd.read_csv(path)
-link = 'https://forms.office.com/Pages/ResponsePage.aspx?id=y7xkPyIn5UK1ynGyBgRdh8-wGEk3Z51JtzuJQUW5THtUN0s5RVJQOFQ5R0swSktXSlQyWlBBUjFWUi4u&origin=Invitation&channel=1'
-memberno = st.text_input('Kindly input your member number to confirm your eligibility')
 
 
-def IsMemberEligible(enrollee_id):
-    memberno = wellness_df.AvonoldEnrolleId.tolist()
-    if enrollee_id in memberno:
-        st.button('Open Wellness Survey')
-        result = webbrowser.open_new_tab(link)
+enrollee_id = st.text_input('Kindly input your member number and press the enter key to confirm your eligibility')
+enrollee_id = enrollee_id.upper()
 
-    else:
-        result = 'You are not eligible to participate, please contact your HR or Client Manager'
 
-    return result
+#def IsMemberEligible(enrollee_id):
+#member_list = wellness_df.AvonoldEnrolleId.tolist()
+if enrollee_id:
+    if enrollee_id in wellness_df['AvonoldEnrolleId'].values:
+        enrollee_name = wellness_df.loc[wellness_df['AvonoldEnrolleId'] == enrollee_id, 'membername'].values[0]
+        st.balloons()
+        st.info(f'Welcome {enrollee_name} \n Please click the link below to continue',icon="✅")
+        st.write("[AVON Wellness Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=y7xkPyIn5UK1ynGyBgRdh8-wGEk3Z51JtzuJQUW5THtUN0s5RVJQOFQ5R0swSktXSlQyWlBBUjFWUi4u&origin=Invitation&channel=1)")
+       
+    elif enrollee_id not in wellness_df['AvonoldEnrolleId'].values:
+        st.info('You are not eligible to participate, please contact your HR or Client Manager')
+else:
+    st.write('You must input your Member number to continue')
 
-st.write(IsMemberEligible(memberno))
+#st.write(IsMemberEligible(memberno))
