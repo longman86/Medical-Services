@@ -28,7 +28,7 @@ if enrollee_id:
         enrollee_name = wellness_df.loc[wellness_df['MemberNo'] == enrollee_id, 'membername'].values[0]
         st.balloons()
         st.info(f'Welcome {enrollee_name}. \n Please click the link below to continue',icon="✅")
-        st.write("[AVON Wellness Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=y7xkPyIn5UK1ynGyBgRdh8-wGEk3Z51JtzuJQUW5THtUN0s5RVJQOFQ5R0swSktXSlQyWlBBUjFWUi4u&origin=Invitation&channel=1)")
+        st.write("[AVON Wellness Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=y7xkPyIn5UK1ynGyBgRdhwThIjvb_VxNtMX-P8ytR_1UQ01ZRU05WFhERkRIQTVLRlZVUTNNSTcxMS4u")
        
     elif enrollee_id not in wellness_df['MemberNo'].values:
         st.info('You are not eligible to participate, please contact your HR or Client Manager')
