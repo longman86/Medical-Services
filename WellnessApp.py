@@ -5,7 +5,7 @@ from PIL import Image
 st.set_page_config(layout='wide')
 image = Image.open("AvonLogo.png")
 st.image(image, use_column_width=False)
-st.title('AVON Pre Screening Medical Assessment Verification Portal')
+st.title('AVON Pre Screening Medical Assessment Portal')
 
 
 #url = "https://raw.githubusercontent.com/longman86/Avon-Wellness-Survey/main/Member_Wellness.csv" # Make sure the url is the raw version of the file on GitHub
