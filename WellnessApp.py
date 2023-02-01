@@ -3,8 +3,8 @@ import pandas as pd
 from PIL import Image
 
 st.set_page_config(layout='wide')
-image = Image.open("AvonLogo.png")
-st.image(image, use_column_width=False)
+image = Image.open("Pre-ScreeningHeader.png")
+st.image(image, use_column_width=True)
 st.title('AVON Pre Screening Medical Assessment Portal')
 
 
@@ -36,3 +36,5 @@ else:
     st.write('You must input your Member number to continue')
 
 #st.write(IsMemberEligible(memberno))
+image1 = Image.open('Pre-ScreeningBottom.png')
+st.image(image1, use_column_width=True)
