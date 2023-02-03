@@ -27,7 +27,7 @@ if enrollee_id:
     if enrollee_id in wellness_df['MemberNo'].values:
         enrollee_name = wellness_df.loc[wellness_df['MemberNo'] == enrollee_id, 'membername'].values[0]
         st.balloons()
-        st.info(f'Welcome {enrollee_name}. \n Please click the link below to continue',icon="✅")
+        st.info(f'Welcome {enrollee_name}.\n \n By clicking the link below I hereby give the scheme authorisation to the information I have provided.I understand and accept that the above authorisation constitutes a waiver of my right to privacy.',icon="✅")
         st.write("[AVON Wellness Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=y7xkPyIn5UK1ynGyBgRdhwThIjvb_VxNtMX-P8ytR_1UQ01ZRU05WFhERkRIQTVLRlZVUTNNSTcxMS4u)")
        
     elif enrollee_id not in wellness_df['MemberNo'].values:
