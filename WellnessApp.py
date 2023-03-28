@@ -13,7 +13,7 @@ st.title('AVON Pre Screening Medical Assessment Portal')
 @st.experimental_memo(ttl = dt.timedelta(hours=24))
 def get_data_from_sql(query):
     conn = pyodbc.connect(
-        'DRIVER={ODBC Driver 18 for SQL Server};SERVER='
+        'DRIVER={ODBC Driver 17 for SQL Server};SERVER='
         +st.secrets['server']
         +';DATABASE='
         +st.secrets['database']
