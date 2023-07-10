@@ -25,7 +25,7 @@ def get_data_from_sql(query):
     df = pd.read_sql(query, conn)
     conn.close()
     return df
-query = 'SELECT * from vw_wellness_enrollee'
+query = 'SELECT * from tbl_wellness_enrollee'
 wellness_df = get_data_from_sql(query=query)
 #wellness_df = pd.read_csv('Wellness_Member_List.csv')
 wellness_df['memberno'] = wellness_df['memberno'].astype(str)
