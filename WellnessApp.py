@@ -31,7 +31,7 @@ wellness_df = get_data_from_sql(query=query)
 wellness_df['memberno'] = wellness_df['memberno'].astype(str)
 
 
-enrollee_id = st.text_input('Please note that Annual Wellness Check is done once in a policy year. \n \n Kindly input your member number and press the enter key to confirm your eligibility')
+enrollee_id = st.text_input('You are entitled to access wellness once in a Policy Year. \n \n Kindly input your member number and press the enter key to confirm your eligibility')
 enrollee_id = str(enrollee_id)
 
 
