@@ -25,13 +25,13 @@ def get_data_from_sql(query):
     df = pd.read_sql(query, conn)
     conn.close()
     return df
-query = 'SELECT * from vw_wellness_enrollee'
+query = 'SELECT * from tbl_wellness_enrollee'
 wellness_df = get_data_from_sql(query=query)
 #wellness_df = pd.read_csv('Wellness_Member_List.csv')
 wellness_df['memberno'] = wellness_df['memberno'].astype(str)
 
 
-enrollee_id = st.text_input('Please note that Annual Wellness Check is done once in a policy year. \n \n Kindly input your member number and press the enter key to confirm your eligibility')
+enrollee_id = st.text_input('Kindly input your member number and press the enter key to confirm your eligibility')
 enrollee_id = str(enrollee_id)
 
 
